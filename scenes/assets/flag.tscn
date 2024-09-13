@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://boumjjg2cpuej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgj1r"]
+size = Vector2(254, 149.5)
+
+[sub_resource type="Gradient" id="Gradient_fvh2k"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fdq1k"]
+gradient = SubResource("Gradient_fvh2k")
+
+[node name="Flag" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xgj1r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 153.5)
+texture = SubResource("GradientTexture1D_fdq1k")

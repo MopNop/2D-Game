@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckhxdvg1v525o"]
+[gd_scene load_steps=6 format=3 uid="uid://ckhxdvg1v525o"]
 
 [ext_resource type="PackedScene" uid="uid://bkokkgak3cfyg" path="res://scenes/assets/player.tscn" id="1_0mtq7"]
+[ext_resource type="PackedScene" uid="uid://boumjjg2cpuej" path="res://scenes/assets/flag.tscn" id="2_8v0t6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtcxm"]
-size = Vector2(66.633, 65.8805)
+size = Vector2(263.795, 61.1762)
 
 [sub_resource type="Gradient" id="Gradient_a7704"]
-colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0.85771, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_paejr"]
 gradient = SubResource("Gradient_a7704")
@@ -15,15 +17,21 @@ gradient = SubResource("Gradient_a7704")
 
 [node name="player" parent="." instance=ExtResource("1_0mtq7")]
 
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, -230)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(583, 1042)
-scale = Vector2(39.2977, -8.12407)
+scale = Vector2(39.2977, -5.16407)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1.31653, -1.05968)
+position = Vector2(1.31653, 1.29246)
 shape = SubResource("RectangleShape2D_rtcxm")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1.22746, 0)
-scale = Vector2(1.03836, 1)
+scale = Vector2(4.12537, 1)
 texture = SubResource("GradientTexture2D_paejr")
+
+[node name="Flag" parent="." instance=ExtResource("2_8v0t6")]
+position = Vector2(1918, 784)
