@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://boumjjg2cpuej"]
+[gd_scene load_steps=5 format=3 uid="uid://boumjjg2cpuej"]
+
+[ext_resource type="Script" path="res://scripts/flag.gd" id="1_vr6re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgj1r"]
 size = Vector2(254, 149.5)
@@ -11,6 +13,7 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_fvh2k")
 
 [node name="Flag" type="Area2D"]
+script = ExtResource("1_vr6re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xgj1r")
@@ -18,3 +21,5 @@ shape = SubResource("RectangleShape2D_xgj1r")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1, 153.5)
 texture = SubResource("GradientTexture1D_fdq1k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -16,6 +16,7 @@ gradient = SubResource("Gradient_a7704")
 [node name="Node2D" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_0mtq7")]
+position = Vector2(120, 760)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, -230)
@@ -34,4 +35,4 @@ scale = Vector2(4.12537, 1)
 texture = SubResource("GradientTexture2D_paejr")
 
 [node name="Flag" parent="." instance=ExtResource("2_8v0t6")]
-position = Vector2(1918, 784)
+position = Vector2(510, 776)
